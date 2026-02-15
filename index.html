@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Pink Cat Valentine Gift Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-gradient" aria-hidden="true"></div>
+    <div class="heart-pattern" aria-hidden="true"></div>
+
+    <div class="stickers" aria-hidden="true">
+      <div class="sticker cat cat-1"><span class="emojiOrSvg">😺</span></div>
+      <div class="sticker cat cat-2"><span class="emojiOrSvg">😻</span></div>
+      <div class="sticker cat cat-3"><span class="emojiOrSvg">🐱</span></div>
+      <div class="sticker cat cat-4"><span class="emojiOrSvg">😺</span></div>
+      <div class="sticker cat cat-5"><span class="emojiOrSvg">😻</span></div>
+      <div class="sticker cat cat-6"><span class="emojiOrSvg">🐱</span></div>
+      <div class="sticker paw paw-1"><span class="emojiOrSvg">🐾</span></div>
+      <div class="sticker paw paw-2"><span class="emojiOrSvg">🐾</span></div>
+      <div class="sticker paw paw-3"><span class="emojiOrSvg">💖</span></div>
+      <div class="sticker paw paw-4"><span class="emojiOrSvg">🐾</span></div>
+    </div>
+
+    <div class="corner-sparkles" aria-hidden="true">
+      <span class="corner-sparkle cs-1">✦</span>
+      <span class="corner-sparkle cs-2">✧</span>
+      <span class="corner-sparkle cs-3">✦</span>
+      <span class="corner-sparkle cs-4">✧</span>
+      <span class="corner-sparkle cs-5">✦</span>
+      <span class="corner-sparkle cs-6">✧</span>
+    </div>
+
+    <div id="ambient-hearts" class="ambient-hearts" aria-hidden="true"></div>
+    <div id="burst-layer" class="burst-layer" aria-hidden="true"></div>
+    <audio id="bgm" loop preload="auto">
+  <source src="love.mp3" type="audio/mpeg" />
+</audio>
+
+
+    <main class="app">
+      <header class="progress-wrap">
+        <div class="progress-steps" id="progress-steps" aria-label="Journey progress">
+          <span class="progress-step active" data-step="1">❤</span>
+          <span class="progress-step" data-step="2">❤</span>
+          <span class="progress-step" data-step="3">❤</span>
+          <span class="progress-step" data-step="4">❤</span>
+          <span class="progress-step" data-step="5">❤</span>
+          <span class="progress-step" data-step="6">❤</span>
+        </div>
+        <p class="progress-label" id="progress-label">1 / 6</p>
+      </header>
+      <button id="music-toggle" class="music-toggle" type="button" aria-label="Toggle background music" aria-pressed="false">
+        🔇
+      </button>
+
+      <section class="screen active" id="screen-1" data-screen="1">
+        <div class="screen-card start-card">
+          <h1 class="title">Hi Minh Thi 💗</h1>
+          <p class="subtitle">I have a Valentine gift for you…</p>
+          <p class="prompt">Do you want to open it?</p>
+
+          <div class="gift-stage" aria-hidden="true">
+            <div class="gift" id="gift-box">
+              <div class="gift-lid"></div>
+              <div class="gift-body"></div>
+              <div class="gift-ribbon gift-ribbon-v"></div>
+              <div class="gift-ribbon gift-ribbon-h"></div>
+              <div class="gift-bow">
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <span class="sparkle sp-1">✦</span>
+            <span class="sparkle sp-2">✧</span>
+            <span class="sparkle sp-3">✦</span>
+            <span class="sparkle sp-4">✧</span>
+          </div>
+
+          <p class="tease-text" id="tease-text" aria-live="polite"></p>
+
+          <div class="button-row" id="screen1-buttons">
+            <button id="yes-btn" class="btn btn-primary" aria-label="Open the gift">
+              YES 💝
+            </button>
+            <button id="no-btn" class="btn btn-soft" aria-label="Say no to opening the gift">
+              NO 🙅‍♀️
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen" id="screen-2" data-screen="2">
+        <div class="screen-card lock-card-shell">
+          <div class="lock-card" id="lock-card">
+            <div class="lock-icon" id="lock-icon" aria-hidden="true">🔒</div>
+            <h2 class="screen-title">Secret Access 💌</h2>
+            <p class="screen-subtitle">Enter the password to continue</p>
+
+            <form id="pin-form" class="pin-form" autocomplete="off" novalidate>
+              <div class="pin-grid">
+                <div class="pin-field">
+                  <label for="pin-0">Digit 1</label>
+                  <input id="pin-0" class="pin-input" type="text" inputmode="numeric" maxlength="1" pattern="[0-9]*" />
+                </div>
+                <div class="pin-field">
+                  <label for="pin-1">Digit 2</label>
+                  <input id="pin-1" class="pin-input" type="text" inputmode="numeric" maxlength="1" pattern="[0-9]*" />
+                </div>
+                <div class="pin-field">
+                  <label for="pin-2">Digit 3</label>
+                  <input id="pin-2" class="pin-input" type="text" inputmode="numeric" maxlength="1" pattern="[0-9]*" />
+                </div>
+                <div class="pin-field">
+                  <label for="pin-3">Digit 4</label>
+                  <input id="pin-3" class="pin-input" type="text" inputmode="numeric" maxlength="1" pattern="[0-9]*" />
+                </div>
+              </div>
+
+              <p class="pin-error" id="pin-error" aria-live="polite"></p>
+
+              <div class="button-row">
+                <button id="unlock-btn" type="submit" class="btn btn-primary" aria-label="Unlock with pin">
+                  Unlock ✨
+                </button>
+                <button id="back-to-1" type="button" class="btn btn-soft" aria-label="Go back to first screen">
+                  Back ↩︎
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen" id="screen-3" data-screen="3">
+        <div class="screen-card">
+          <h2 class="screen-title">Most Beautiful Flower🌸</h2>
+          <p class="screen-subtitle">My princess</p>
+
+          <div class="timeline-shell">
+            <div class="timeline" id="timeline">
+              <div id="memory-list" class="memory-list"></div>
+            </div>
+          </div>
+
+          <div class="button-row nav-row">
+            <button id="back-to-2" class="btn btn-soft" aria-label="Go back to screen 2">Back</button>
+            <button id="next-to-4" class="btn btn-primary" aria-label="Go to screen 4">Next ➜</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen" id="screen-4" data-screen="4">
+        <div class="screen-card">
+          <h2 class="screen-title">Little Cards for You 💝</h2>
+          <p class="screen-subtitle">Tap a card to open it</p>
+
+          <div class="card-toolbar">
+            <button id="random-open-btn" class="btn btn-soft" aria-label="Open a random card">Random Open 🎲</button>
+            <button id="open-all-btn" class="btn btn-soft" aria-label="Open all cards">Open All ✨</button>
+            <p class="opened-counter" id="opened-counter">Opened: 0 / 10</p>
+          </div>
+
+          <div class="mini-card-grid" id="mini-card-grid"></div>
+
+          <div class="button-row nav-row">
+            <button id="back-to-3" class="btn btn-soft" aria-label="Go back to screen 3">Back</button>
+            <button id="next-to-5" class="btn btn-primary" aria-label="Go to screen 5">Next ➜</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen" id="screen-5" data-screen="5">
+        <div class="screen-card love5">
+          <h2 class="love5-title">To Minh Thi, My Love 💗</h2>
+          <div class="love5-divider" aria-hidden="true"></div>
+
+          <div class="love5-split">
+            <div class="love5-photoWrap" role="img" aria-label="Main photo placeholder">
+                <img
+                  id="main-photo"
+                  src="https://sf-static.upanhlaylink.com/img/image_202602169c4247d3e3cf6dbe3305904b11436f9f.jpg"
+                  alt="Main photo"
+                  loading="lazy"
+                  onerror="this.style.display='none'; this.parentElement.classList.add('fallback');"
+                />
+              <span class="tape t1" aria-hidden="true"></span>
+              <span class="tape t2" aria-hidden="true"></span>
+              <span class="photo-grain" aria-hidden="true"></span>
+              <span class="photo-heart" aria-hidden="true">💖</span>
+            </div>
+
+            <div class="love5-letterWrap">
+              <div class="letter-divider" aria-hidden="true"><span></span><i>💗</i><span></span></div>
+              <p>
+                Thank you for being the safest and brightest part of my life, Minh Thi. I am grateful for your kindness,
+                your patience, and all the quiet ways you care, even when no one notices. With you, love feels less like a
+                big speech and more like a gentle home that I get to return to every day.
+              </p>
+              <p>
+                I want a future with you that is full of small, honest happiness: morning check-ins, shared meals, silly cat
+                reels, long walks, and the comfort of knowing we are on the same team. I promise to protect your peace, to
+                listen with a calm heart, and to choose softness when life gets loud. I will keep learning how to love you
+                better in the details, not only in the highlights.
+              </p>
+              <p>
+                This Valentine is special, but what matters most is that every day is you. Every day is us, and I would still
+                choose your hand in mine, again and again.
+              </p>
+            </div>
+          </div>
+
+          <div class="button-row nav-row">
+            <button id="back-to-4" class="btn btn-soft" aria-label="Go back to screen 4">Back</button>
+            <button id="next-to-6" class="btn btn-primary" aria-label="Go to screen 6">Next ➜</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen" id="screen-6" data-screen="6">
+        <div class="screen-card end-card final6">
+          <div class="final6-glow" aria-hidden="true"></div>
+          <div class="final-sparkles" aria-hidden="true">
+            <span>✦</span>
+            <span>✧</span>
+            <span>✦</span>
+          </div>
+          <div class="final-floaters" aria-hidden="true">
+            <span>♡</span>
+            <span>♥</span>
+            <span>❥</span>
+          </div>
+          <h2 class="ending-title final6-title">Happy Valentine, my love!</h2>
+          <p class="final6-signature">— Minh Thi 💗</p>
+          <button id="replay-btn" class="btn btn-primary replay-btn" aria-label="Replay the entire valentine journey">
+            Replay ↺
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <div class="memory-modal" id="memory-modal" aria-hidden="true">
+      <div class="memory-modal-backdrop" id="memory-modal-backdrop"></div>
+      <div class="memory-modal-panel" role="dialog" aria-modal="true" aria-label="Memory photo preview">
+        <button id="memory-modal-close" class="modal-close" aria-label="Close memory modal">✕</button>
+        <div class="memory-modal-photo" id="memory-modal-photo"></div>
+      </div>
+    </div>
+
+    <div class="card-message-modal" id="card-message-modal" aria-hidden="true">
+      <div class="card-message-backdrop" id="card-message-backdrop"></div>
+      <div class="card-message-panel" role="dialog" aria-modal="true" aria-labelledby="card-message-title">
+        <button id="card-message-close" class="card-message-close" aria-label="Close card message modal">✕</button>
+        <p id="card-message-meta" class="card-message-meta">Card #1</p>
+        <h3 id="card-message-title">To Minh Thi 💌</h3>
+        <p id="card-message-text"></p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
